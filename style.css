@@ -1,4 +1,135 @@
-.{
+:root{
+    --primary-white: #FDFDFD;
+    --primary-yellow: #f2be22;
+    --primary-dark-grey: #1A3E3E;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+body{
+    font-family: Arial;
     margin: 0;
     padding: 0;
+    
+}
+a{
+    text-decoration:none;
+}
+.start{
+    background-image: url(img/start-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.container{
+    max-width: 1197px;
+    margin: 0 auto;
+    padding: 0 16px;
+    
+}
+.header{ 
+    padding-top: 16px;  
+}
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation{
+    margin-left: auto;
+    margin-right: 49px;
+}
+.menu-list{
+    list-style-type: none;
+    display: flex;
+    
+}
+.menu-item{
+    
+    font-size: 18px;
+    line-height: 24px;
+    margin-right: 16px;
+}
+.item-link{
+    color: var(--primary-white);
+}
+.item-link:hover{
+    color: var(--primary-yellow);
+}
+.btn{
+    color: var(--primary-white);
+    background-color: var(--primary-dark-grey);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.start .title{
+    
+    text-transform: uppercase;
+    font-size: 50px;
+    line-height: 75px;
+    font-weight: 700;
+    color: var(--primary-white);
+}
+
+.start-search{
+    margin-top: 42px;
+    background: #FFFFFF33;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    padding: 40px 43px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 24px;
+}
+.header-search{
+    background-color: var(--primary-white);
+    color: var(--primary-dark-grey);
+    padding: 16px 24px;
+    
+}
+.start-search .span{
+    margin: 8px 0 0 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #fdfdfd;
+}
+.start-input{
+    width: 100%;
+}
+.start-input{
+    border: 1px solid var(--primary-white);
+    padding: 9px 16px;
+    border-radius: 8px;
+    background-color: unset;
+    color: var(--primary-white);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    height: 52px;
+}
+.block-date .start-input{
+    padding: 0 5px;
+    height: 52px;
+}
+.start-search .block-date{
+    display: flex;
+}
+.block-date .begin{
+    border-radius: 8px 0px 0px 8px;
+    border-right: none;
+}
+.block-date .end{
+    border-radius: 0px 8px 8px 0px;
+    border-left: none;
+}
+.start-info{
+    padding-top: 400px;
+    padding-bottom: 82px;
 }
