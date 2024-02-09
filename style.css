@@ -2,6 +2,7 @@
     --primary-white: #FDFDFD;
     --primary-yellow: #f2be22;
     --primary-dark-grey: #1A3E3E;
+    --primary-black: #18121E;
 }
 *, *::before, *::after {
     box-sizing: border-box;
@@ -64,6 +65,11 @@ a{
     font-weight: 600;
     font-size: 16px;
     line-height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .start .title{
@@ -132,4 +138,181 @@ a{
 .start-info{
     padding-top: 400px;
     padding-bottom: 82px;
+}
+.about{
+    background-color: var(--primary-white);
+}
+.about .container{
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    gap: 120px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.about__media {
+    height: 526px;
+    width: 480px;
+ }
+
+.about__img {
+    border-radius: 24px;
+    height: 400px;
+    width: 350px;
+    object-fit: cover;
+}
+.img-front {
+    position: relative;
+    left: 130px;
+    top: -274px; 
+}
+.about__content {
+    align-self: center;
+ }
+.about__info {
+    margin: 0;
+    padding: 0;
+    
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--primary-yellow);
+
+ }
+.about__title {
+    margin: 0;
+    padding: 0;
+
+    margin-top: 8px;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 38px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--primary-black);
+
+ }
+.about__text {
+    margin: 0;
+    padding: 0;
+
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: var(--primary-black);
+ }
+.about__link {
+    margin: 0;
+    padding: 0;
+    width: 220px;
+    height: 52px;
+    margin-top: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.012em;
+    text-align: left;
+    padding: 16px 36px;
+    
+    
+ }
+
+/* Кастомный селект */
+
+.dropdown__button{
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    border: 1px solid var(--primary-dark-grey);
+    padding: 9px 16px;
+    border-radius: 8px;
+    background-color: var(--primary-white);
+    color: var(--primary-dark-grey);
+    height: 52px;
+    padding-right: 35px;
+    cursor: pointer;
+}
+
+.dropdown__button::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+
+    /*рисует треугольник*/
+    width: 0;
+    height: 0;
+    border-width: 10.4px 6px 0 6px;
+    border-color: var(--primary-dark-grey) transparent transparent transparent;
+    border-style: solid;
+
+    pointer-events: none;
+}
+
+.dropdown__button:focus, .dropdown__button--active{
+    outline: none;
+    border-color: var(--primary-yellow);
+
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown__list {
+    display: none;
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    position: absolute;
+    left: 0;
+    top: 52px;
+
+    background-color: var(--primary-dark-grey);
+    color: var(--primary-white);
+    overflow: hidden;
+    
+    border-radius: 8px;
+    width: 100%;
+
+    z-index: 1;
+ }
+
+ .dropdown__list--visible{
+    display: block;
+ }
+
+.dropdown__list-item { 
+    margin: 0;
+    padding: 0;
+    padding: 13px 20px;
+
+    border: 1px solid var(--primary-white);
+    border-bottom: 0px;
+
+    cursor: pointer;
+}
+
+.dropdown__list-item:first-child{ 
+    border-radius: 8px 8px 0 0;
+}
+.dropdown__list-item:last-child{ 
+    border-radius: 0 0 8px 8px;
+    border-bottom: 1px solid var(--primary-white);
+}
+
+.dropdown__list-item:hover{
+    background-color: #255a4d;
+}
+
+.dropdown__input-hidden{
+    display: block;
 }
