@@ -1,23 +1,43 @@
-let dropdownButton = document.querySelector(".dropdown__button");
-let dropdownList = document.querySelector('.dropdown__list');
-let dropdownItems = document.querySelectorAll('.dropdown__list-item');
-let dropdownInput = document.querySelector('dropdown__input-hidden');
-
-//Клик по кнопке открыть/закрыть select
-dropdownButton.addEventListener('click', function (){
-    dropdownList.classList.toggle('dropdown__list--visible');
-    this.classList.add('dropdown__button--active');
+document.querySelectorAll('.dropdown').forEach(function(dropDownWrapper){
     
-})
+    const dropDownButton = dropDownWrapper.querySelector(".dropdown__button");
+    const dropDownList = dropDownWrapper.querySelector('.dropdown__list');
+    const dropDownItems = dropDownList.querySelectorAll('.dropdown__list-item');
+    const dropDownInput = dropDownWrapper.querySelector('.dropdown__input-hidden');
 
-//Выбор элемента из списка. Запонить выбранное значение. Закрыть дропдаун.
-dropdownItems.forEach(function(listItem){
-    listItem.addEventListener('click', function(){
-        dropdownButton.innerText = this.innerText;
-        dropdownButton.focus();
-        console.log(this.dataset.value);
-        dropdownInput.value = this.dataset.value;
+    //Клик по кнопке открыть/закрыть select
+    dropDownButton.addEventListener('click', function (){
+        dropDownList.classList.toggle('dropdown__list--visible');
+        this.classList.add('dropdown__button--active');
         
-        dropdownList.classList.remove('dropdown__list--visible');
+    })
+
+    //Выбор элемента из списка. Запонить выбранное значение. Закрыть дропдаун.
+    dropDownItems.forEach(function(listItem){
+        listItem.addEventListener('click', function(e){
+            e.stopPropagation();
+            dropDownButton.innerText = this.innerText;
+            dropDownButton.focus();
+            dropDownInput.value = this.dataset.value;
+            dropDownList.classList.remove('dropdown__list--visible');
+
+        })
+    })
+
+    //клик снаружи дроп дауна. Закрыть дропдаун
+    document.addEventListener('click', function (e) {
+        if(e.target !== dropDownButton){
+            dropDownList.classList.remove('dropdown__list--visible');
+            dropDownButton.classList.remove('dropdown__button--active');
+        }
+    })
+
+    //Закртыие на Esc и Tab
+    document.addEventListener('keydown', function (e) {
+        if ( e.key === 'Tab' || e.key === 'Escape') {
+            dropDownList.classList.remove('dropdown__list--visible');
+            dropDownButton.classList.remove('dropdown__button--active');
+        }
     })
 })
+

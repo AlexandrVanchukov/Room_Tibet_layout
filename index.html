@@ -32,11 +32,14 @@
                     <h1 class="title">Насладись прогулкой в горах с командой единомышленников</h1>
                     <form action="" class="start-search">
                         <lable class="start-lable">
-                            <select name="" id="location" class="start-input location">
-                                <option value="" class="placeholder">Локация для тура</option>
-                            </select>
-                            <div class="choose-list">
-                                <div class="choose-list-item"></div>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown__button">Локация для тура</button>
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__list-item" data-value="uk">Великобритания</li>
+                                    <li class="dropdown__list-item" data-value="rf">Россия</li>
+                                    <li class="dropdown__list-item" data-value="usa">США</li>
+                                </ul>
+                                <input type="text" name="select-num" value="" class="dropdown__input-hidden">
                             </div>
                             <span class="span">выберите из списка</span>
                         </lable>
@@ -50,9 +53,15 @@
                         </div>
                         
                         <lable class="start-lable">
-                            <select name="" id="persons" class="start-input persons">
-                                <option value="" class="placeholder">Участники</option>
-                            </select>
+                            <div class="dropdown">
+                                <button type="button" class="dropdown__button">Участинки</button>
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__list-item" data-value="4">4</li>
+                                    <li class="dropdown__list-item" data-value="5">5</li>
+                                    <li class="dropdown__list-item" data-value="6">6</li>
+                                </ul>
+                                <input type="text" name="select-num" value="" class="dropdown__input-hidden">
+                            </div>
                             <span class="span">минимум 4 человека</span>
                         </lable>
                         
@@ -80,7 +89,7 @@
             </div>
         </section>
         <section class="offer">
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <div class="dropdown">
                     <button class="dropdown__button">Заметки Путешественника</button>
                     <ul class="dropdown__list">
@@ -90,9 +99,9 @@
                         <li class="dropdown__list-item" data-value="4">4</li>
                         <li class="dropdown__list-item" data-value="5">5</li>
                     </ul>
-                    <input type="text" name="select-num" value="null" class="dropdown__input-hidden">
+                    <input type="text" name="select-num" value="" class="dropdown__input-hidden">
                 </div>
-            </div> -->
+            </div>
 
             
         </section>
